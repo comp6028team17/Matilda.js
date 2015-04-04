@@ -2,11 +2,13 @@
  * Webscale Statistical Inference
  */
 
-var Matilda = {};
+var Matilda = module.exports = {};
 
 Matilda.Model = (function () {
 
     // / Helpers / /    / 
+
+    // Create a new 0.0 initialised matrix of floats
     var newMatrix = function(height, width) {
         //return 0.0 initialised matrix of Float32 values with size 
         //width*height or height*height
@@ -29,9 +31,7 @@ Matilda.Model = (function () {
     }
 
     var weightedRandom = function(weights, sum) {
-        var sample = sum * Math.random(),
-        i = 0;
-
+        var sample = sum * Math.random(), i = 0;
         sample -= weights[i];
 
         while (sample > 0.0) {

@@ -15,7 +15,7 @@ fs.readFile('internet.linux.computers.pretty.json', 'utf8', function(err, data){
     documents.forEach(function(doc, docIndex){
         var wordlist = [];
 
-        if(docIndex > 500) return false;
+        if(docIndex > 50) return false;
 
         //convert keys of dict to words placed as many time as seen
         for( var prop in doc.wordcounts){
@@ -34,6 +34,7 @@ fs.readFile('internet.linux.computers.pretty.json', 'utf8', function(err, data){
         // console.log(modelData.topics);
         // console.log(modelData.documents);
     });
+    process.stdout.write('\nFinished taining.\n');
 
     // console.log( mM.topicCorrelations() );
     // console.log( mM.getTopics() );
